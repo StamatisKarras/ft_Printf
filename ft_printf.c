@@ -34,12 +34,13 @@ int ft_printf(const char *s, ...)
 	while (s[i])
 	{
 		temp = ft_printf_normal(&s[i]);
-		if (temp == -1)
-			return (-1);
 		i += temp;
 		if (s[i] == '%')
 		{
-			count += sorting_hat(&s[i + 1], args);
+			temp = sorting_hat(&s[i + 1], args);
+			if (temp == -1)
+				return (-1);
+			count += temp;
 			i += 2;
 		}
 	}
