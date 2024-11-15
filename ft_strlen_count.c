@@ -3,13 +3,16 @@
 int	strlen_count(const char *s)
 {
 	int	i;
+	int	count;
 
+	count = 0;
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == '%')
 			i += 2;
 		i++;
+		count++;
 	}
-	return (i);
+	return (count);
 }
