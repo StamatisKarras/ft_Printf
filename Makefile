@@ -15,7 +15,8 @@ SRC = ft_print_char.c \
 	  ft_putstr_count.c \
 	  ft_print_unsigned.c \
 	  ft_printf_hexa_lower.c \
-	  ft_print_hex_upper.c
+	  ft_print_hex_upper.c \
+	  ft_print_pointer.c
 
 MAIN = main.c
 

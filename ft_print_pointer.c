@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	hexa_upper(unsigned int  nb)
+int	print_pointer(unsigned long nb)
 {
 	int count;
 
@@ -9,11 +9,11 @@ int	hexa_upper(unsigned int  nb)
 		return (0);
 	if (nb != 0)
 	{
-		hexa_upper(nb / 16);
+		print_pointer(nb / 16);
 		if (nb % 16 <= 9)
 			count += print_char(nb % 16 + '0');
 		else
-			count += print_char(nb % 16 + '7');
+			count += print_char(nb % 16 + 'W');
 	}
 	return (count);
 }

@@ -11,9 +11,13 @@ int	sorting_hat(const char *s, va_list args)
 	else if (*s == 'u')
 		return (print_usnigned(va_arg(args, unsigned int)));
 	else if (*s == 'x')
-		return (hexa_lower(va_arg(args, int)));
+		return (hexa_lower(va_arg(args, unsigned int)));
 	else if (*s == 'X')
-		return (hexa_upper(va_arg(args, int)));
+		return (hexa_upper(va_arg(args, unsigned int)));
+	else if (*s == '%')
+		return (print_char('%'));
+	else if (*s == 'p')
+		return (put_str_count("0x") + print_pointer(va_arg(args, unsigned long)));
 	return (-1);
 }
 

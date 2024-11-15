@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	hexa_lower(int nb)
+int	hexa_lower(unsigned int  nb)
 {
 	int count;
 

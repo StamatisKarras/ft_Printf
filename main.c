@@ -4,10 +4,12 @@ int	main(void)
 {
 	int	i;
 	int	z;
+	void *ptr;
 
-	i = ft_printf("The Hexadecimal: %x\n", 2748);
+	ptr = &i;
+	i = ft_printf("The Hexadecimal: %p\n", ptr);
 	ft_printf("The length is: %i\n", i);
-	z = printf("The Hexadecimal: %x\n", 2748);
+	z = printf("The Hexadecimal: %p\n", ptr);
 	printf("The length is: %i\n", i);
 	i = ft_printf("The Hexadecimal: %X\n", 2748);
 	ft_printf("The length is: %i\n", i);
