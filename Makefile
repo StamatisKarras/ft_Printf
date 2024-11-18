@@ -29,8 +29,8 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(LIBFT)  $(OBJ)
-	@$(AR) $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(LIBFT)
+	@$(AR) $(NAME) $(OBJ) $(LIBFT_OBJ)
 	@echo "Library Created Succesfully"
 
 $(LIBFT):
