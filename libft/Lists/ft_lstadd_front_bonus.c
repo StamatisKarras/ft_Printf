@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/11/08 12:08:42 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/08 12:09:36 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

@@ -1,11 +1,18 @@
-NAME = printf
-
 CC = cc
+
 CFLAGS = -Wall -Wextra -Werror
+
+RM = rm -f
+
+AR = ar rcs
+
+NAME = libftprintf.a
 
 HEADER = ft_printf.h
 
-LIBFT = libft/libft.a
+LIBFT = ./libft/Make_and_Library/libft.a
+
+LIBFTLOC = ./libft/Make_and_Library/
 
 SRC = ft_print_char.c \
 	  ft_printf_normal.c \
@@ -18,25 +25,30 @@ SRC = ft_print_char.c \
 	  ft_print_hex_upper.c \
 	  ft_print_pointer.c
 
-MAIN = main.c
-
-OBJ = $(SRC:.c=.o) $(MAIN:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+$(NAME): $(LIBFT)  $(OBJ)
+	@$(AR) $(NAME) $(OBJ)
+	@echo "Library Created Succesfully"
 
-%.o: %.c $(HEADER) $(LIBFT)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(LIBFT):
+	@$(MAKE) -C $(LIBFTLOC)
+
+%.o: %.c $(HEADER)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@$(RM) $(OBJ)
+	@$(MAKE) -C $(LIBFTLOC) clean
+	@echo "Cleaning has been completed"
 
 fclean: clean
-	rm -f $(NAME)
+	@$(RM) $(NAME)
+	@$(MAKE) -C $(LIBFTLOC) fclean
+	@echo "Thorough cleaning has been completed"
 
-re: fclean all
+re: all
 
 .PHONY: all clean fclean re
-

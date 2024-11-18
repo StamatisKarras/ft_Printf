@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/10/29 11:00:58 by skarras           #+#    #+#             */
+/*   Updated: 2024/10/29 11:39:55 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+int	ft_isascii(int c)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

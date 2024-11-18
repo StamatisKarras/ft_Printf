@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_normal.c                                 :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:44:32 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:44:34 by skarras          ###   ########.fr       */
+/*   Created: 2024/10/31 12:08:55 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/09 10:58:17 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_normal(const char *s)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i] && s[i] != '%')
+	if (!src || size == 0)
+		return (ft_strlen(src));
+	else
 	{
-		ft_putchar_fd(s[i], 1);
-		i++;
+		while (src[i] && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+		return (ft_strlen(src));
 	}
-	return (i);
 }

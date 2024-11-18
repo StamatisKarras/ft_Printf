@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/10/29 17:48:47 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/08 13:30:12 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	size_t				i;
+	unsigned char		*conv;
+
+	conv = (unsigned char *) str;
+	i = 0;
+	while (i < n)
+	{
+		conv[i] = (unsigned char) c;
+		i++;
+	}
+	return (conv);
 }

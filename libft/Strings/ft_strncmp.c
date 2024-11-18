@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_normal.c                                 :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:44:32 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:44:34 by skarras          ###   ########.fr       */
+/*   Created: 2024/10/31 17:02:31 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/09 11:57:12 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_normal(const char *s)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i] && s[i] != '%')
-	{
-		ft_putchar_fd(s[i], 1);
+	if (n == 0)
+		return (0);
+	while ((unsigned char)s1[i] == (unsigned char)s2[i] && i < n - 1)
 		i++;
-	}
-	return (i);
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }

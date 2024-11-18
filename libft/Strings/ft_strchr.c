@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/10/31 16:07:36 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/11 11:32:06 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	size_t	i;
+	size_t	l;
+	char	*p;
+
+	p = (char *) s;
+	l = ft_strlen(p);
+	i = 0;
+	while (i < l + 1)
+	{
+		if (p[i] == c)
+			return (&p[i]);
+		i++;
+	}
+	return (NULL);
 }

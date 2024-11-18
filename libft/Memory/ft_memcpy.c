@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/10/29 19:01:15 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/01 16:35:17 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	size_t		i;
+	char		*dest;
+	char		*src;
+
+	dest = (char *) dest_str;
+	src = (char *) src_str;
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest_str);
 }

@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/11/01 16:33:28 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/11 11:32:17 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+char	*ft_strdup(const char *s)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	size_t	i;
+	char	*p;
+
+	i = 0;
+	p = (char *) malloc(ft_strlen(s) + 1);
+	if (p == NULL)
+		return (NULL);
+	while (s[i])
+	{
+		p[i] = s[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
 }

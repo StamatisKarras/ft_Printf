@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/11/09 14:25:05 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/11 20:09:05 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	t_list	*tmp;
+
+	if (!lst)
+		return (NULL);
+	tmp = lst;
+	while (tmp)
+	{
+		if (tmp->next == NULL)
+			break ;
+		tmp = tmp->next;
+	}
+	return (tmp);
 }

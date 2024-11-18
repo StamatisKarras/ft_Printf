@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_hex_upper.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 08:43:57 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/18 08:50:59 by skarras          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int	hexa_upper(unsigned int  nb, int count)
+int	hexa_upper(unsigned int nb, int count)
 {
 	if (nb == 0)
 		return (0);

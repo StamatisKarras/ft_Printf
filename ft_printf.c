@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 08:46:56 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/18 08:49:28 by skarras          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	sorting_hat(const char *s, va_list args)
@@ -28,12 +40,12 @@ int	sorting_hat(const char *s, va_list args)
 	return (-1);
 }
 
-int ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
-	va_list	args;
-	int count;
-	int	i;
-	int	temp;
+	va_list		args;
+	int			count;
+	int			i;
+	int			temp;
 
 	i = 0;
 	count = 0;

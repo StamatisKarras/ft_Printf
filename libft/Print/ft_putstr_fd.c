@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/11/04 15:23:00 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/04 15:23:50 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	size_t	i;
+
+	if (fd >= 0 && fd <= 2)
+	{
+		i = 0;
+		while (s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+	}
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/10/29 10:45:57 by skarras           #+#    #+#             */
+/*   Updated: 2024/10/29 11:40:03 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+int	ft_isalnum(int c)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	if (c >= 48 && c <= 57)
+		return (8);
+	else if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (8);
+	else
+		return (0);
 }

@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_count.c                                  :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:45:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:51:51 by skarras          ###   ########.fr       */
+/*   Created: 2024/11/06 21:29:52 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/09 12:13:58 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	strlen_count(const char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	int	count;
+	unsigned int	i;
+	char			*n_string;
 
-	count = 0;
 	i = 0;
+	n_string = (char *) malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!n_string)
+		return (NULL);
 	while (s[i])
 	{
-		if (s[i] == '%')
-			i += 2;
-		count++;
+		n_string[i] = f(i, s[i]);
 		i++;
 	}
-	return (count);
+	n_string[i] = '\0';
+	return (n_string);
 }

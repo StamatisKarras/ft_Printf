@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:43:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:43:19 by skarras          ###   ########.fr       */
+/*   Created: 2024/11/08 10:01:46 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/08 10:02:53 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(int c)
+t_list	*ft_lstnew(void *content)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	t_list	*list;
+
+	list = (t_list *) malloc((sizeof(t_list)));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }
