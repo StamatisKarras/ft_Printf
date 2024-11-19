@@ -11,7 +11,9 @@ int	main(void)
 	char *charp;
 	char *strp;
 	unsigned int *unsignedp;
+	char *s;
 
+	s = NULL;
 	ft_putstr_fd("Test 1: Char\n---------------\n\n", 1);
 	z = ft_printf("Printf 1: %c\n", 'A');
 	i = printf("Printf 2: %c\n", 'A');
@@ -77,6 +79,11 @@ int	main(void)
 	ft_putstr_fd("Test 4: String\n---------------\n\n", 1);
 	z = ft_printf("Printf 1: %s\n\n", "ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
 	i = printf("Printf 2: %s\n\n", "ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+	printf("Return: %d\n", z);
+	printf("Return: %d\n\n", i);
+	ft_putstr_fd("Test 5: String\n---------------\n\n", 1);
+	z = ft_printf("Printf 1: %s\n\n", s);
+	i = printf("Printf 2: %s\n\n", s);
 	printf("Return: %d\n", z);
 	printf("Return: %d\n\n", i);
 	ft_putstr_fd("Test 1: Pointer\n---------------\n\n", 1);

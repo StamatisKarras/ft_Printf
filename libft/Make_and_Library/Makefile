@@ -56,6 +56,8 @@ SRC = $(Conv_Src) $(Is_Src) $(List_Src) $(Memory_Src) $(Print_Src) $(Strings_Src
 BONUS_OBJ = $(List_Src:.c=.o)
 OBJ = $(SRC:.c=.o)
 
+.SILENT:
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
