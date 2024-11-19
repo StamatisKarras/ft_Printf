@@ -27,27 +27,31 @@ SRC = ft_print_char.c \
 
 OBJ = $(SRC:.c=.o)
 
+.SILENT:
+
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	@$(AR) $(NAME) $(OBJ) $(LIBFT_OBJ)
-	@echo "Library Created Succesfully"
+	cp $(LIBFT) .
+	mv libft.a $(NAME)
+	$(AR) $(NAME) $(OBJ)
+	echo "Library is workies"
 
 $(LIBFT):
-	@$(MAKE) -C $(LIBFTLOC)
+	$(MAKE) -C $(LIBFTLOC)
 
 %.o: %.c $(HEADER)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJ)
-	@$(MAKE) -C $(LIBFTLOC) clean
-	@echo "Cleaning has been completed"
+	$(RM) $(OBJ)
+	$(MAKE) -C $(LIBFTLOC) clean
+	echo "Cleaning has been completed"
 
 fclean: clean
-	@$(RM) $(NAME)
-	@$(MAKE) -C $(LIBFTLOC) fclean
-	@echo "Thorough cleaning has been completed"
+	$(RM) $(NAME)
+	$(MAKE) -C $(LIBFTLOC) fclean
+	echo "Thorough cleaning has been completed"
 
 re: all
 
