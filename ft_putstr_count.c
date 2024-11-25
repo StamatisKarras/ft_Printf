@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:45:09 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/19 10:54:39 by skarras          ###   ########.fr       */
+/*   Updated: 2024/11/25 09:31:28 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	put_str_count(const char *s)
 {
 	int	count;
 
-	if(!s)
+	if (!s)
 	{
 		put_str_count("(null)");
-		return(6);
+		retur (6);
 	}
 	count = ft_strlen(s);
-	ft_putstr_fd((char *) s, 1);
+	ft_putstr_fd ((char *) s, 1);
 	return (count);
 }
