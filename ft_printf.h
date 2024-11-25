@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:44:51 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 12:13:48 by skarras          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:31:15 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	putnbr_count(int n);
 int	put_str_count(const char *s);
 int	strlen_count(const char *s);
 int	print_usnigned(unsigned int n, int count);
-int	hexa_lower(unsigned int nb, int count);
-int	hexa_upper(unsigned int nb, int count);
+int	print_hex(unsigned long long nb, char type);
 int	print_pointer(unsigned long nb, int count);
 
 #endif

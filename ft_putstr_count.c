@@ -19,7 +19,7 @@ int	put_str_count(const char *s)
 	if (!s)
 	{
 		put_str_count("(null)");
-		retur (6);
+		return (6);
 	}
 	count = ft_strlen(s);
 	ft_putstr_fd ((char *) s, 1);

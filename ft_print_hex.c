@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_hexa_lower.c                             :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 08:44:25 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:50:49 by skarras          ###   ########.fr       */
+/*   Created: 2024/11/25 15:38:53 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/25 15:38:54 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	hexa_lower(unsigned int nb, int count)
+int	print_hex(unsigned long long nb, char type)
 {
-	if (nb == 0)
-		return (0);
-	if (nb != 0)
+	int	count;
+
+	count = 0;
+	if (nb >= 16)
 	{
-		count += hexa_lower(nb / 16, count);
-		if (nb % 16 <= 9)
-			count += print_char(nb % 16 + '0');
+		count += print_hex(nb / 16, type);
+		count += print_hex(nb % 16, type);
+	}
+	else
+	{
+		if (nb < 10)
+			count += print_char(nb + '0');
 		else
-			count += print_char(nb % 16 + 'W');
+		{
+			if (type == 'x')
+				count += print_char((nb - 10) + 'a');
+			else if (type == 'X')
+				count += print_char((nb - 10) + 'A');
+		}
 	}
 	return (count);
 }

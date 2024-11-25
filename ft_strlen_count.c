@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:45:15 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:51:51 by skarras          ###   ########.fr       */
+/*   Updated: 2024/11/25 14:20:50 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	strlen_count(const char *s)
 	while (s[i])
 	{
 		if (s[i] == '%')
+		{
 			i += 2;
+			continue ;
+		}
 		count++;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:46:56 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:49:28 by skarras          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:31:53 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	sorting_hat(const char *s, va_list args)
 	else if (*s == 'u')
 		return (print_usnigned(va_arg(args, unsigned int), 0));
 	else if (*s == 'x')
-		return (hexa_lower(va_arg(args, unsigned int), 0));
+		return (print_hex(va_arg(args, unsigned int), 'x'));
 	else if (*s == 'X')
-		return (hexa_upper(va_arg(args, unsigned int), 0));
+		return (print_hex(va_arg(args, unsigned int), 'X'));
 	else if (*s == '%')
 		return (print_char('%'));
 	else if (*s == 'p')

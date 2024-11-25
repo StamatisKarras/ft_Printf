@@ -21,8 +21,7 @@ SRC = ft_print_char.c \
 	  ft_strlen_count.c \
 	  ft_putstr_count.c \
 	  ft_print_unsigned.c \
-	  ft_printf_hexa_lower.c \
-	  ft_print_hex_upper.c \
+	  ft_print_hex.c \
 	  ft_print_pointer.c
 
 OBJ = $(SRC:.c=.o)

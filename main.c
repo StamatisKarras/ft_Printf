@@ -220,10 +220,9 @@ int	main(void)
 	i = printf("Printf 2: %X\n\n", -1525);
 	printf("Return: %d\n", z);
 	printf("Return: %d\n\n", i);
-	/*ft_putstr_fd("Test 1: Error\n---------------\n\n", 1);
-	z = ft_printf("Printf 1: %z\n\n", -1525);
-	i = printf("\nPrintf 2: %z\n\n", -1525);
+	z = ft_printf("asdasd%sadsad%dasdad%s\n\n", "HEllo", 5, "Name");
+	i = printf("asdasd%sadsad%dasdad%s\n\n", "HEllo", 5, "Name");
 	printf("Return: %d\n", z);
 	printf("Return: %d\n\n", i);
-	return (0);*/
+	return (0);
 }
