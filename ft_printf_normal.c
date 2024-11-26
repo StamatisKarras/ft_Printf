@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:44:32 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/18 08:44:34 by skarras          ###   ########.fr       */
+/*   Updated: 2024/11/26 09:43:49 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_printf_normal(const char *s)
 	i = 0;
 	while (s[i] && s[i] != '%')
 	{
-		ft_putchar_fd(s[i], 1);
+		print_char(s[i]);
 		i++;
 	}
 	return (i);
