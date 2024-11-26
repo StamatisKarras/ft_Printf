@@ -61,6 +61,11 @@ int	main(void)
 	i = printf("Printf 2: %i\n", INT_MIN);
 	printf("\nReturn: %d\n", z);
 	printf("Return: %d\n\n", i);
+	ft_putstr_fd("Test 5: Int\n---------------\n\n", 1);
+	z = ft_printf("Printf 1: %i\n", NULL);
+	i = printf("Printf 2: %i\n", NULL);
+	printf("\nReturn: %d\n", z);
+	printf("Return: %d\n\n", i);
 	ft_putstr_fd("Test 1: String\n---------------\n\n", 1);
 	z = ft_printf("Printf 1: %s\n\n", "Hello World!");
 	i = printf("Printf 2: %s\n\n", "Hello World!");

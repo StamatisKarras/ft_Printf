@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:44:51 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/25 15:31:15 by skarras          ###   ########.fr       */
+/*   Updated: 2024/11/26 14:35:50 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	strlen_count(const char *s);
 int	print_usnigned(unsigned int n, int count);
 int	print_hex(unsigned long long nb, char type);
 int	print_pointer(unsigned long nb, int count);
+int	outoflines(const char *s, va_list args);
 
 #endif

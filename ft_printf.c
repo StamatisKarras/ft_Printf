@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:46:56 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/25 15:31:53 by skarras          ###   ########.fr       */
+/*   Updated: 2024/11/26 14:38:04 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ int	sorting_hat(const char *s, va_list args)
 	return (-1);
 }
 
-int	ft_printf(const char *s, ...)
+int	outoflines(const char *s, va_list args)
 {
-	va_list		args;
-	int			count;
-	int			i;
-	int			temp;
+	int	count;
+	int	i;
+	int	temp;
 
 	i = 0;
 	count = 0;
-	va_start(args, s);
 	while (s[i])
 	{
 		temp = ft_printf_normal(&s[i]);
+		if (temp == -1)
+			return (-1);
 		i += temp;
 		if (s[i] == '%')
 		{
@@ -63,6 +63,21 @@ int	ft_printf(const char *s, ...)
 			i += 2;
 		}
 	}
+	return (count);
+}
+
+int	ft_printf(const char *s, ...)
+{
+	va_list		args;
+	int			count;
+	int			temp;
+
+	count = 0;
+	va_start(args, s);
+	temp = outoflines(s, args);
+	if (temp == -1)
+		return (-1);
+	count += temp;
 	va_end(args);
 	count += (strlen_count(s));
 	return (count);
